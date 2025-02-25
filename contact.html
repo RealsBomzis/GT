@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- Galvas daļa ar meta informāciju un stilu definīcijām -->
+ <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>
+     Sazinieties ar mums - Galda tenisa kopiena
+    </title>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <!-- Navigācijas izvēlnes stili -->
+    <style>
+     ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                gap: 10px;
+        }
+       
+    </style>
+    
+ </head>
+ <body>
+    <!-- Galvene ar vietnes nosaukumu un navigācijas izvēlni -->
+    <header>
+     <h1>
+        Sazinieties ar mums
+     </h1>
+     <!-- Galvenā navigācijas izvēlne -->
+     <nav>
+        <ul>
+         <li>
+            <a href="index.html">
+             Sākums
+            </a>
+         </li>
+         <li>
+            <a href="about.html">
+             Par galda tenisu
+            </a>
+         </li>
+         <li>
+            <a href="rules.html">
+             Spēles noteikumi
+            </a>
+         </li>
+         <li>
+            <a href="equipment.html">
+             Aprīkojuma ceļvedis
+            </a>
+         </li>
+         <li>
+            <a href="techniques.html">
+             Tehnikas un padomi
+            </a>
+         </li>
+         <li>
+            <a href="calendar.html">
+             Turnīru kalendārs
+            </a>
+         </li>
+         <li>
+            <a href="resources.html">
+             Noderīgi resursi
+            </a>
+         </li>
+         <li>
+            <a href="contact.html">
+             Sazinieties ar mums
+            </a>
+         </li>
+        </ul>
+     </nav>
+    </header>
+    <!-- Galvenais saturs -->
+    <main>
+     <!-- Kontaktu forma -->
+     <section>
+      <h2>
+        Sazinieties ar mums
+      </h2>
+      <form action="#" method="post" onsubmit="return validateForm()">
+        <label for="name">
+          Vārds:
+        </label>
+        <input id="name" name="name" required="" type="text"/>
+        <label for="email">
+          E-pasts:
+        </label>
+        <input id="email" name="email" required="" type="email"/>
+        <label for="topic">
+          Tēma:
+        </label>
+        <select id="topic" name="topic" required="" style="width: 102.5%; padding: 10px; margin-bottom: 10px;">
+          <option value="general">Vispārīgs jautājums</option>
+          <option value="rules">Spēles noteikumi</option>
+          <option value="equipment">Aprīkojums</option>
+          <option value="techniques">Tehnikas un padomi</option>
+          <option value="other">Cits</option>
+        </select>
+        <br>
+      <label for="message">
+        Ziņa:
+      </label>
+      <textarea id="message" name="message" required="" rows="5" style="resize: vertical; width: 100%;"></textarea>
+      <button type="submit">
+        Sūtīt ziņu
+      </button>
+      </form>
+      <script>
+        function validateForm() {
+          var email = document.getElementById('email').value;
+          var atSymbol = email.indexOf('@');
+          if (atSymbol < 1 || email.indexOf('@', atSymbol + 1) !== -1) {
+            alert('Lūdzu, ievadiet derīgu e-pasta adresi ar vienu "@" simbolu.');
+            return false;
+          }
+          return true;
+        }
+      </script>
+    </section>
+</button>
+     </section>
+     <!-- Sociālo tīklu saites -->
+     <section>
+        <h2>
+         Seko mums
+        </h2>
+        <div class="social-media">
+         <a href="https://facebook.com" target="_blank">
+            Facebook
+         </a>
+         <a href="https://instagram.com" target="_blank">
+            Instagram
+         </a>
+         <a href="https://twitter.com" target="_blank">
+            Twitter
+         </a>
+        </div>
+     </section>
+    </main>
+    <!-- Kājene ar autortiesību informāciju -->
+    <footer>
+     <p>
+        © 2025 Galda tenisa kopiena. Visas tiesības aizsargātas.
+     </p>
+    </footer>
+ </body>
+</html>

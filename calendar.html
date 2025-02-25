@@ -1,0 +1,182 @@
+<!-- Dokumenta tips un pamata HTML struktūra -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <!-- Meta tagi un lapas pamatiestatījumi -->
+     <meta charset="utf-8"/>
+     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+     <title>
+      Turnīru kalendārs - Galda tenisa kopiena
+     </title>
+     <!-- CSS failu iekļaušana -->
+     <link href="css/styles.css" rel="stylesheet"/>
+     <!-- Iekšējie stili sarakstu noformēšanai -->
+     <style>
+      ul {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    gap: 10px;
+          }
+          
+     </style>
+     
+ </head>
+ <body>
+<!-- Galvene ar virsrakstu un meklēšanas lauku -->
+<header>
+ <h1 style="color: #2c3e50;">
+          Gaidāmie turnīri
+ </h1>
+ <!-- Meklēšanas ievades lauks -->
+ <input id="search" placeholder="Meklēt turnīrus..." type="text"/>
+</header>
+<!-- Galvenā satura sadaļa ar turnīru tabulu -->
+<main>
+ <table style="width: 100%; border-collapse: collapse; border: 1px solid black;">
+       <!-- Tabulas galvene -->
+       <thead>
+          <tr>
+                <th style="border: 1px solid black; padding: 8px;">
+                 Datums
+                </th>
+                <th style="border: 1px solid black; padding: 8px;">
+                 Atrašanās vieta
+                </th>
+                <th style="border: 1px solid black; padding: 8px;">
+                 Turnīra nosaukums
+                </th>
+                <th style="border: 1px solid black; padding: 8px;">
+                 Reģistrācijas saite
+                </th>
+          </tr>
+       </thead>
+       <!-- Tabulas saturs ar turnīru sarakstu -->
+       <tbody>
+          <tr>
+                <td style="border: 1px solid black; padding: 8px;">
+                 2024. gada 15. marts
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Pilsētas sporta centrs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Pavasara atklātais turnīrs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 <a href="#">
+                         Reģistrēties
+                 </a>
+                </td>
+          </tr>
+          <!-- Turnīru ieraksti ... -->
+          <!-- Pārējie turnīru ieraksti saglabāti nemainīgi -->
+          <tr>
+                <td style="border: 1px solid black; padding: 8px;">
+                 2024. gada 20. aprīlis
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Pilsētas arēna
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Pilsētas izaicinājums
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 <a href="#">
+                         Reģistrēties
+                 </a>
+                </td>
+          </tr>
+          <tr>
+                <td style="border: 1px solid black; padding: 8px;">
+                 2024. gada 10. maijs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Kopienas zāle
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Vasaras trieciens
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 <a href="#">
+                         Reģistrēties
+                 </a>
+                </td>
+          </tr>
+          <tr>
+                <td style="border: 1px solid black; padding: 8px;">
+                 2024. gada 15. jūnijs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Sporta halle
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Vasaras kauss
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 <a href="#">
+                         Reģistrēties
+                 </a>
+                </td>
+          </tr>
+          <tr>
+                <td style="border: 1px solid black; padding: 8px;">
+                 2024. gada 25. jūlijs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Galda tenisa centrs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Starptautiskais turnīrs
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 <a href="#">
+                         Reģistrēties
+                 </a>
+                </td>
+          </tr>
+          <tr>
+                <td style="border: 1px solid black; padding: 8px;">
+                 2024. gada 5. augusts
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Sporta komplekss
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 Rudens izaicinājums
+                </td>
+                <td style="border: 1px solid black; padding: 8px;">
+                 <a href="#">
+                         Reģistrēties
+                 </a>
+                </td>
+          </tr>
+          <!-- Vēl papildus turnīri var būt ierakstīti te -->
+       </tbody>
+ </table>
+</main>
+<!-- Kājene ar autortiesību informāciju -->
+<footer>
+ <p>
+          © 2025 Galda tenisa kopiena
+      </p>
+     </footer>
+     <!-- JavaScript kods meklēšanas funkcionalitātei -->
+     <script>
+      // Meklēšanas lauka funkcionalitāte
+      const searchInput = document.getElementById('search');
+                    // Pievienojam notikumu klausītāju ievades laukam
+                    searchInput.addEventListener('input', function() {
+                              const filter = searchInput.value.toLowerCase();
+                              const rows = document.querySelectorAll('tbody tr');
+                              // Filtrējam tabulas rindas pēc ievadītā teksta
+                              rows.forEach(row => {
+                                        const cells = row.getElementsByTagName('td');
+                                        const match = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(filter));
+                                        row.style.display = match ? '' : 'none';
+                              });
+                    });
+     </script>
+ </body>
+</html>

@@ -1,0 +1,236 @@
+<!-- Galda tenisa mājaslapa ar spēles noteikumiem un informāciju -->
+<!DOCTYPE html>
+<html lang="en"></html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Galda tenisa noteikumi
+  </title>
+  <!-- Ārējā CSS faila piesaiste -->
+  <link href="css/styles.css" rel="stylesheet"/>
+  <!-- Navigācijas izvēlnes stili -->
+  <style>
+   ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+    }
+
+  </style>
+  
+ </head>
+ <body>
+  <!-- Galvene ar navigācijas izvēlni -->
+  <header>
+   <h1>
+    Galda tenisa noteikumi
+   </h1>
+   <nav>
+    <ul>
+     <li>
+      <a href="index.html">
+       Sākums
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       Par galda tenisu
+      </a>
+     </li>
+     <li>
+      <a href="rules.html">
+       Spēles noteikumi
+      </a>
+     </li>
+     <li>
+      <a href="equipment.html">
+       Aprīkojuma ceļvedis
+      </a>
+     </li>
+     <li>
+      <a href="techniques.html">
+       Tehnikas un padomi
+      </a>
+     </li>
+     <li>
+      <a href="calendar.html">
+       Turnīru kalendārs
+      </a>
+     </li>
+     <li>
+      <a href="resources.html">
+       Noderīgi resursi
+      </a>
+     </li>
+     <li>
+      <a href="contact.html">
+       Sazinieties ar mums
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <!-- Galvenā satura sadaļa -->
+  <main>
+<section>
+ <h2>
+  Pamata noteikumi
+ </h2>
+ <!-- Pamata noteikumu saraksts -->
+ <ul style="display: block"></ul>
+  <li>
+    Katrs mačs tiek spēlēts līdz 5 vai 7 uzvarētām partijām.
+  </li>
+  <li>
+    Partiju uzvar pirmais spēlētājs, kurš sasniedz 11 punktus, ja abi spēlētāji sasniedz 10 punktus, spēle turpinās, līdz viens spēlētājs iegūst 2 punktu pārsvaru.
+  </li>
+  <li>
+    Spēlētājiem jāservē aiz gala līnijas un virs spēles laukuma līmeņa.
+  </li>
+  <li>
+    Bumbai jāatsitas servera pusē, pirms tā šķērso tīklu, un pēc tam jāatsitas pretinieka pusē.
+  </li>
+ </ul>
+</section>
+   <section>
+    <h2>
+     Punktu skaitīšanas sistēma
+    </h2>
+    <p>
+     Punkti tiek piešķirti, ja pretinieks neizpilda pareizu servi vai atbildi vai pārkāpj citus spēles noteikumus.
+    </p>
+   </section>
+  <section>
+   <h2>
+    Spēles variācijas
+   </h2>
+   <p>
+    Galda tenisam ir vairākas variācijas, tostarp vienspēles un dubultspēles, kā arī dažādi turnīru formāti.
+   </p>
+  </section>
+  <!-- Interaktīvs tests -->
+  <section>
+    <h2>Interaktīvs tests</h2>
+    <form id="quiz" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div>
+        <h3>1. Cik punktus nepieciešams, lai uzvarētu partiju?</h3>
+        <label>
+          <input type="checkbox" name="q1" value="10"> 10
+        </label>
+        <label>
+          <input type="checkbox" name="q1" value="11"> 11
+        </label>
+        <label>
+          <input type="checkbox" name="q1" value="12"> 12
+        </label>
+      </div>
+      <div>
+        <h3>2. Vai spēlētājs var atsist bumbu, pirms tā atsitas?</h3>
+        <label>
+          <input type="checkbox" name="q2" value="yes"> Jā
+        </label>
+        <label>
+          <input type="checkbox" name="q2" value="no"> Nē
+        </label>
+      </div>
+      <div>
+        <h3>3. Kur jāservē bumba?</h3>
+        <label>
+          <input type="checkbox" name="q3" value="aiz gala līnijas"> Aiz gala līnijas
+        </label>
+        <label>
+          <input type="checkbox" name="q3" value="virs spēles laukuma līmeņa"> Virs spēles laukuma līmeņa
+        </label>
+        <label>
+          <input type="checkbox" name="q3" value="abas iepriekšējās atbildes"> Abas iepriekšējās atbildes
+        </label>
+      </div>
+      <div>
+        <h3>4. Kas notiek, ja abi spēlētāji sasniedz 10 punktus?</h3>
+        <label>
+          <input type="checkbox" name="q4" value="spēle turpinās līdz viens spēlētājs iegūst 2 punktu pārsvaru"> Spēle turpinās līdz viens spēlētājs iegūst 2 punktu pārsvaru
+        </label>
+        <label>
+          <input type="checkbox" name="q4" value="spēle beidzas neizšķirti"> Spēle beidzas neizšķirti
+        </label>
+      </div>
+      <div style="grid-column: span 2; text-align: center;"></div>
+        <button type="button" onclick="checkAnswers()">Pārbaudīt atbildes</button>
+      </div>
+    </form>
+    <div id="quiz-result" style="grid-column: span 2; text-align: center; margin-top: 20px;"></div>
+  </section>
+  <!-- JavaScript funkcija atbilžu pārbaudei -->
+  <script>
+    function checkAnswers() {
+      var correctAnswers = {
+        q1: "11",
+        q2: "no",
+        q3: "abas iepriekšējās atbildes",
+        q4: "spēle turpinās līdz viens spēlētājs iegūst 2 punktu pārsvaru"
+      };
+      var quizForm = document.getElementById("quiz");
+      var resultDiv = document.getElementById("quiz-result");
+      var score = 0;
+      var totalQuestions = 4;
+
+      for (var question in correctAnswers) {
+        var selected = quizForm.querySelector(`input[name="${question}"]:checked`);
+        if (selected && selected.value === correctAnswers[question]) {
+          score++;
+        }
+      }
+
+      resultDiv.innerHTML = `Jūs atbildējāt pareizi uz ${score} no ${totalQuestions} jautājumiem.`;
+    }
+  </script>
+
+   <!-- Biežāk uzdotie jautājumi ar izvelkamu saturu -->
+   <section>
+    <h2>
+     FAQ
+    </h2>
+    <button class="collapsible">
+     Kas notiek, ja bumba trāpa tīklā servēšanas laikā?
+    </button>
+    <div class="content">
+     <p>
+      Ja bumba trāpa tīklā, bet joprojām pāriet pāri un piezemējas pareizajā servēšanas zonā, tas tiek uzskatīts par let servi un tiek atkārtots.
+     </p>
+    </div>
+    <button class="collapsible">
+     Vai es varu atsist bumbu, pirms tā atsitas?
+    </button>
+    <div class="content"></div>
+     <p>
+      Nē, spēlētājiem jāļauj bumbai atsisties uz viņu puses, pirms to atgriezt.
+     </p>
+    </div>
+   </section>
+  </main>
+  <!-- Kājene ar autortiesību informāciju -->
+  <footer>
+   <p>
+    © 2025 Galda Tenisa Kopiena
+   </p>
+  </footer>
+  <!-- JavaScript kods izvelkamā satura funkcionalitātei -->
+  <script>
+   var coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+  </script>
+ </body>
+</html>
